@@ -43,12 +43,19 @@ public class HistoricEventRVAdapter extends RecyclerView.Adapter<HistoricEventRV
     holder.cardView.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+
             posicionMarcada = cardPosicion;
             notifyDataSetChanged();
 
         }
     });
+        if(posicionMarcada == position){
+            holder.barra.setVisibility(View.VISIBLE);
 
+        }else {
+            holder.barra.setVisibility(View.INVISIBLE);
+
+        }
 
     }
 
@@ -57,16 +64,17 @@ public class HistoricEventRVAdapter extends RecyclerView.Adapter<HistoricEventRV
         return divisaEventModels.size();
     }
     public static class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView tvName, tvValor;
+        TextView tvName, tvValor, barra;
         ImageView tvIcon;
         CardView cardView;
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             cardView = itemView.findViewById(R.id.cvDivisa);
             tvName = itemView.findViewById(R.id.tvEventName);
             tvValor = itemView.findViewById(R.id.tvEventPrecio);
             tvIcon = itemView.findViewById(R.id.tvEventIcon);
-
+            barra = itemView.findViewById(R.id.barraSeleccion);
         }
     }
 }

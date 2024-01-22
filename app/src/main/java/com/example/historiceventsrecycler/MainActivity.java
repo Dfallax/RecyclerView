@@ -74,38 +74,30 @@ public class MainActivity extends AppCompatActivity {
         convertidor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                boolean isDigit = true;
-                Double valor = Double.parseDouble(inputText.getText().toString());
-                Double clienteVip = 1.02;
-                Switch switchVip = findViewById(R.id.clienteVip);
 
-                for(int i = 0; i < inputText.getText().toString().length(); i++){
-                    if(Character.isLetter((inputText.getText().toString().charAt(i))) && (inputText.getText().toString().charAt(i)) != '.'){
-                        isDigit = false;
-                        break;
+                try {
+                    Double clienteVip = 1.02;
+                    Switch switchVip = findViewById(R.id.clienteVip);
+
+                    if(inputText.getText().toString().isBlank()){
+                        Toast.makeText(MainActivity.this, "El Campo está vacío", Toast.LENGTH_SHORT).show();
                     }
+                    if (HistoricEventRVAdapter.posicionMarcada==-1) {
+                        Toast.makeText(MainActivity.this, "Selecciona una divisa", Toast.LENGTH_SHORT).show();
+
+                    }else {
+                        if(switchVip.isChecked()){
+                            clienteVip = 1.0;
+                        }
+                        resultadoConversion.setText("" + Double.parseDouble
+                                (divisaEventModels.get(HistoricEventRVAdapter.posicionMarcada).getEventValor()) *
+                                Double.parseDouble(inputText.getText().toString()) * clienteVip);
+                        resultadoConversion.setVisibility(View.VISIBLE);
+                    }
+                }catch (Exception e){
+                    Toast.makeText(MainActivity.this, "Coloca un valor númerico válido", Toast.LENGTH_SHORT).show();
                 }
 
-                if(inputText.getText().toString().isBlank()){
-                    Toast.makeText(MainActivity.this, "El Campo está vacío", Toast.LENGTH_SHORT).show();
-
-                } else if (!isDigit) {
-                    Toast.makeText(MainActivity.this, "El campo solo admite números", Toast.LENGTH_SHORT).show();
-
-                }else if (HistoricEventRVAdapter.posicionMarcada==-1) {
-                    Toast.makeText(MainActivity.this, "SELECCIONE UNA DIVISA", Toast.LENGTH_SHORT).show();
-
-                }else {
-                    if(switchVip.isChecked()){
-                        clienteVip = 1.0;
-                    }
-                    resultadoConversion.setText("" + Double.parseDouble
-                            (divisaEventModels.get(HistoricEventRVAdapter.posicionMarcada).getEventValor()) *
-                            Double.parseDouble(inputText.getText().toString())*clienteVip);
-                    resultadoConversion.setVisibility(View.VISIBLE);
-
-
-                }
             }
         });
 

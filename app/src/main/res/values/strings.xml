@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HistoricEventsRecycler</string>
+    <string name="app_name">Conversor de Divisas</string>
 <string-array name="nombres_divisas">
     <item>USD</item>
     <item>GBP</item>

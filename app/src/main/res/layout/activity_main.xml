@@ -12,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Introduce Euros:"
+        android:textSize="17sp"
         android:textColor="@color/color_text"
         app:layout_constraintBottom_toTopOf="@+id/historicEventModelRecycleView"
         app:layout_constraintEnd_toStartOf="@+id/inputText"
@@ -24,10 +25,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Divisas"
-        android:textColor="@color/color_text"
+        android:text="@string/app_name"
         android:textAlignment="center"
-        android:textSize="40sp"
+        android:textColor="@color/color_text"
+        android:textSize="30sp"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
@@ -52,15 +53,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <TextView
-        android:id="@+id/divisaInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/color_text"
-        android:text="Selecciona una divisa"
-        app:layout_constraintBottom_toTopOf="@+id/historicEventModelRecycleView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <Switch
         android:id="@+id/clienteVip"

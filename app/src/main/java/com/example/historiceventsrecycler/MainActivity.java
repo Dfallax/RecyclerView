@@ -13,6 +13,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -73,22 +74,36 @@ public class MainActivity extends AppCompatActivity {
         convertidor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                boolean isDigit = true;
+                Double valor = Double.parseDouble(inputText.getText().toString());
+                Double clienteVip = 1.02;
+                Switch switchVip = findViewById(R.id.clienteVip);
+
+                for(int i = 0; i < inputText.getText().toString().length(); i++){
+                    if(Character.isLetter((inputText.getText().toString().charAt(i))) && (inputText.getText().toString().charAt(i)) != '.'){
+                        isDigit = false;
+                        break;
+                    }
+                }
 
                 if(inputText.getText().toString().isBlank()){
                     Toast.makeText(MainActivity.this, "El Campo está vacío", Toast.LENGTH_SHORT).show();
 
-                } else if (!TextUtils.isDigitsOnly(inputText.getText().toString())) {
+                } else if (!isDigit) {
                     Toast.makeText(MainActivity.this, "El campo solo admite números", Toast.LENGTH_SHORT).show();
 
                 }else if (HistoricEventRVAdapter.posicionMarcada==-1) {
                     Toast.makeText(MainActivity.this, "SELECCIONE UNA DIVISA", Toast.LENGTH_SHORT).show();
 
-                }else{
-
-                    resultadoConversion.setText(""+Double.parseDouble
-                            (divisaEventModels.get(HistoricEventRVAdapter.posicionMarcada).getEventValor())*
-                                 Double.parseDouble(inputText.getText().toString()));
+                }else {
+                    if(switchVip.isChecked()){
+                        clienteVip = 1.0;
+                    }
+                    resultadoConversion.setText("" + Double.parseDouble
+                            (divisaEventModels.get(HistoricEventRVAdapter.posicionMarcada).getEventValor()) *
+                            Double.parseDouble(inputText.getText().toString())*clienteVip);
                     resultadoConversion.setVisibility(View.VISIBLE);
+
 
                 }
             }

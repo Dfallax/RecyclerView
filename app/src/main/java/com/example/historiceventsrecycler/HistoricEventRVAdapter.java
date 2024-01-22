@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class HistoricEventRVAdapter extends RecyclerView.Adapter<HistoricEventRVAdapter.MyViewHolder> {
     Context context;
     ArrayList<HistoricEventModel> divisaEventModels;
-    public static int posicionMarcada =- 1;
+    public static int posicionMarcada = -1;
 
     public HistoricEventRVAdapter(Context context, ArrayList<HistoricEventModel> historicEventModels) {
         this.context = context;
@@ -44,7 +44,9 @@ public class HistoricEventRVAdapter extends RecyclerView.Adapter<HistoricEventRV
         @Override
         public void onClick(View view) {
             posicionMarcada = cardPosicion;
+            divisaEventModels.get(position);
             notifyDataSetChanged();
+
         }
     });
 
@@ -56,7 +58,7 @@ public class HistoricEventRVAdapter extends RecyclerView.Adapter<HistoricEventRV
         return divisaEventModels.size();
     }
     public static class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView tvName, tvValor;
+        TextView tvName, tvValor, barraSeleccion;
         ImageView tvIcon;
         CardView cardView;
         public MyViewHolder(@NonNull View itemView) {
@@ -65,6 +67,7 @@ public class HistoricEventRVAdapter extends RecyclerView.Adapter<HistoricEventRV
             tvName = itemView.findViewById(R.id.tvEventName);
             tvValor = itemView.findViewById(R.id.tvEventPrecio);
             tvIcon = itemView.findViewById(R.id.tvEventIcon);
+            barraSeleccion = itemView.findViewById(R.id.barraSeleccion);
         }
     }
 }

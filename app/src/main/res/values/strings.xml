@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">HistoricEventsRecycler</string>
+<string-array name="nombres_divisas">
+    <item>USD</item>
+    <item>GBP</item>
+    <item>JPY</item>
+    <item>AUD</item>
+    <item>INR</item>
+    <item>CNY</item>
+    <item>MXN</item>
+    <item>CHF</item>
+
+</string-array>
+
+<string-array name="valor_divisas">
+
+    <item>1.0977</item>
+    <item>0.8601</item>
+    <item>159.6059</item>
+    <item>1.6345</item>
+    <item>90.7</item>
+    <item>7.8451</item>
+    <item>18.4931</item>
+    <item>0.9350</item>
+
+</string-array>
+    <string-array name="ic_divisas">
+
+        <item>@drawable/ic_usd</item>
+        <item>@drawable/ic_gbp</item>
+        <item>@drawable/ic_jpy</item>
+        <item>@drawable/ic_aud</item>
+        <item>@drawable/ic_inr</item>
+        <item>@drawable/ic_cny</item>
+        <item>@drawable/ic_mxn</item>
+        <item>@drawable/ic_chf</item>
+
+    </string-array>
+
+</resources>

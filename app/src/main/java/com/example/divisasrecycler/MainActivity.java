@@ -1,4 +1,4 @@
-package com.example.historiceventsrecycler;
+package com.example.divisasrecycler;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -9,10 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     String cvValor;
 
-    ArrayList<HistoricEventModel> divisaEventModels = new ArrayList<>();
+    ArrayList<DivisaModel> divisaModels = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.historicEventModelRecycleView);
         setDivisaEventModel();
 
-        HistoricEventRVAdapter adapter = new HistoricEventRVAdapter(this, divisaEventModels);
+        DivisaRVAdapter adapter = new DivisaRVAdapter(this, divisaModels);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
@@ -58,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         ta.recycle();
 
         for (int i = 0; i < eventNames.length; i++){
-            divisaEventModels.add(new HistoricEventModel(
+            divisaModels.add(new DivisaModel(
                 eventNames[i],
                 eventValor[i],
                 ic_divisa[i]
@@ -82,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                     if(inputText.getText().toString().isBlank()){
                         Toast.makeText(MainActivity.this, "El Campo está vacío", Toast.LENGTH_SHORT).show();
                     }
-                    if (HistoricEventRVAdapter.posicionMarcada==-1) {
+                    if (DivisaRVAdapter.posicionMarcada==-1) {
                         Toast.makeText(MainActivity.this, "Selecciona una divisa", Toast.LENGTH_SHORT).show();
 
                     }else {
@@ -90,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                             clienteVip = 1.0;
                         }
                         resultadoConversion.setText("" + Double.parseDouble
-                                (divisaEventModels.get(HistoricEventRVAdapter.posicionMarcada).getEventValor()) *
+                                (divisaModels.get(DivisaRVAdapter.posicionMarcada).getEventValor()) *
                                 Double.parseDouble(inputText.getText().toString()) * clienteVip);
                         resultadoConversion.setVisibility(View.VISIBLE);
                     }

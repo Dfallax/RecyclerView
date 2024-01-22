@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.historiceventsrecycler'
+    namespace 'com.example.divisasrecycler'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.historiceventsrecycler"
+        applicationId "com.example.divisasrecycler"
         minSdk 24
         targetSdk 33
         versionCode 1

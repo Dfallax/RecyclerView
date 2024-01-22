@@ -1,14 +1,14 @@
-package com.example.historiceventsrecycler;
+package com.example.divisasrecycler;
 
 import android.graphics.drawable.Drawable;
 
-public class HistoricEventModel {
+public class DivisaModel {
 
     public String eventName;
     public String eventValor;
     public Drawable eventIcon;
 
-    public HistoricEventModel(String eventName, String eventValor, Drawable eventIcon) {
+    public DivisaModel(String eventName, String eventValor, Drawable eventIcon) {
         this.eventName = eventName;
         this.eventValor = eventValor;
         this.eventIcon = eventIcon;

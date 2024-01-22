@@ -1,4 +1,4 @@
-package com.example.historiceventsrecycler;
+package com.example.divisasrecycler;
 
 import android.content.Context;
 

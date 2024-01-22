@@ -1,13 +1,11 @@
-package com.example.historiceventsrecycler;
+package com.example.divisasrecycler;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -15,29 +13,29 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class HistoricEventRVAdapter extends RecyclerView.Adapter<HistoricEventRVAdapter.MyViewHolder> {
+public class DivisaRVAdapter extends RecyclerView.Adapter<DivisaRVAdapter.MyViewHolder> {
     Context context;
-    ArrayList<HistoricEventModel> divisaEventModels;
+    ArrayList<DivisaModel> divisaModels;
     public static int posicionMarcada = -1;
 
-    public HistoricEventRVAdapter(Context context, ArrayList<HistoricEventModel> historicEventModels) {
+    public DivisaRVAdapter(Context context, ArrayList<DivisaModel> divisaModels) {
         this.context = context;
-        this.divisaEventModels = historicEventModels;
+        this.divisaModels = divisaModels;
     }
 
     @NonNull
     @Override
-    public HistoricEventRVAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public DivisaRVAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.cv_row, parent, false);
-        return new HistoricEventRVAdapter.MyViewHolder(view);
+        return new DivisaRVAdapter.MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HistoricEventRVAdapter.MyViewHolder holder, int position) {
-    holder.tvName.setText(divisaEventModels.get(position).getEventName());
-    holder.tvValor.setText(divisaEventModels.get(position).getEventValor());
-    holder.tvIcon.setImageDrawable(divisaEventModels.get(position).getEventIcon());
+    public void onBindViewHolder(@NonNull DivisaRVAdapter.MyViewHolder holder, int position) {
+    holder.tvName.setText(divisaModels.get(position).getEventName());
+    holder.tvValor.setText(divisaModels.get(position).getEventValor());
+    holder.tvIcon.setImageDrawable(divisaModels.get(position).getEventIcon());
 
     final int cardPosicion = position;
     holder.cardView.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +59,7 @@ public class HistoricEventRVAdapter extends RecyclerView.Adapter<HistoricEventRV
 
     @Override
     public int getItemCount() {
-        return divisaEventModels.size();
+        return divisaModels.size();
     }
     public static class MyViewHolder extends RecyclerView.ViewHolder{
         TextView tvName, tvValor, barra;

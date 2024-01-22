@@ -9,8 +9,9 @@
         android:id="@+id/cvDivisa"
         android:layout_margin="20dp"
         app:cardElevation="15dp"
-        android:backgroundTint="@color/azul_claro"
+        android:backgroundTint="@color/gris"
         android:layout_width="300dp"
+        app:cardCornerRadius="10sp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,7 +21,7 @@
         <LinearLayout
 
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="70dp"
             android:orientation="horizontal">
 
 
@@ -28,6 +29,7 @@
                 android:id="@+id/tvEventIcon"
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/ic_usd" />
 
@@ -63,7 +65,7 @@
                         android:textColor="@color/black"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:textSize="30sp"
+                        android:textSize="28sp"
                         android:text="1000" />
                 </LinearLayout>
             </LinearLayout>

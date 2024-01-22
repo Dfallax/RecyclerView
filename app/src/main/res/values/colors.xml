@@ -3,7 +3,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="cafe">#b08968</color>
-    <color name="azul_claro">#a8dadc</color>
+    <color name="gris_oscuro">#778da9</color>
+    <color name="gris">#e0e1dd</color>
+    <color name="color_text">#0d1b2a</color>
+
 
 
 </resources>

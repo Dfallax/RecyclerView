@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gris_oscuro"
     tools:context=".MainActivity">
 
     <TextView
@@ -11,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Introduce Euros:"
+        android:textColor="@color/color_text"
         app:layout_constraintBottom_toTopOf="@+id/historicEventModelRecycleView"
         app:layout_constraintEnd_toStartOf="@+id/inputText"
         app:layout_constraintHorizontal_bias="0.116"
@@ -23,6 +25,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Divisas"
+        android:textColor="@color/color_text"
         android:textAlignment="center"
         android:textSize="40sp"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,6 +36,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Cantidad"
+        android:textColor="@color/color_text"
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/historicEventModelRecycleView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,6 +56,7 @@
         android:id="@+id/divisaInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/color_text"
         android:text="Selecciona una divisa"
         app:layout_constraintBottom_toTopOf="@+id/historicEventModelRecycleView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,6 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="VIP"
+        android:textColor="@color/color_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/historicEventModelRecycleView" />
@@ -71,6 +77,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Convertir"
+        android:textColor="@color/color_text"
         android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,6 +88,7 @@
         android:id="@+id/infoResultado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/color_text"
         android:text="Selecciona un valor y pulsa el botón"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,6 +97,7 @@
         android:id="@+id/Resultado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/color_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/infoResultado" />
@@ -100,6 +109,7 @@
         android:text="Resultado conversion"
         android:visibility="invisible"
         android:textSize="20dp"
+        android:textColor="@color/color_text"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/convertir"
         app:layout_constraintEnd_toEndOf="parent"
